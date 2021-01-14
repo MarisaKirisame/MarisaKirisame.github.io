@@ -43,6 +43,12 @@ ul.posts li {
 }
 
 .news {
-    background-color: lightblue;
+    background-color: red;
     text-align: center;
+    white-space: nowrap; overflow: hidden;
+    overflow-x:-webkit-marquee;
+    -webkit-marquee-direction: backwards;
+    -webkit-marquee-style: left;
+    -webkit-marquee-speed: normal;
+    -webkit-marquee-increment: small;
 }
