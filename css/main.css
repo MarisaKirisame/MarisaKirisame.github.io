@@ -41,3 +41,8 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+.news {
+    background-color: lightblue;
+    text-align: center;
+}
