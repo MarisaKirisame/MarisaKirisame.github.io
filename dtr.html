@@ -6,11 +6,17 @@ Dynamic Tensor Rematerialization <br>
 <a href="https://arxiv.org/abs/2006.09616">paper</a> <a href="resources/DTR.pptx">slides</a> <a href="https://www.youtube.com/watch?v=S9KJ37Sx2XY">video</a> <br>
 Marisa Kirisame, Steven Lyubomirsky, Altan Haan, Jennifer Brennan, Mike He, Jared Roesch, Tianqi Chen, Zachary Tatlock <br>
 
+DTR save GPU memory for DNN training by recomputing result when needed. <br>
+
+It allow a 3x memory saving for 20% extra compute time. <br>
+
+It is also simple and can be easily incorporated into different deep learning framework. If you are implementing one, give it a shot! <br> 
+
 Gradient Checkpointing is a technique to save memory for Deep Neural Network training, or more generally, for reverse-mode automatic differentiation. <br>
 
-As memory planning is NP-complete, and as gradient checkpointing has to memory plan for arbitary program with control flow, previous work made different restriction which sacrifice performance or usability. <br>
+As memory planning is NP-complete, and as gradient checkpointing has to plan memory for arbitary program with control flow, previous work made different restriction which sacrifice performance or usability. <br>
 
-Some work assume the program exhibit a strict forward-backward data dependency pattern, and suffer performance degradtion for other data dependency pattern (for example, NN with highway connection/branching). <br>
+Some works assume the program exhibits a strict forward-backward data dependency pattern, and suffers performance degradtion for other data dependency pattern (for example, NN with highway connection/branching). <br>
 
 Other work try to tackle the whole problem by using an ILP solver, which use lots of time to find the optimal memory planning, and can only be used for program without control flow, which pose problem for their application into real world deep learning framework, which often contain complex control flow. <br>
 
