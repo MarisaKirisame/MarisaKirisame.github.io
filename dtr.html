@@ -18,7 +18,7 @@ Gradient Checkpointing is a technique to save memory for Deep Neural Network tra
 
 As memory planning is NP-complete, and as gradient checkpointing has to plan memory for arbitary program with control flow, previous work made different restriction which sacrifice performance or usability. <br>
 
-Some works model the program as a stack machine with no heap, and suffers performance degradtion when the assumption is broken (for example, NN with highway connection/branching). <br>
+Some works models the program as a stack machine with no heap, and suffers performance degradtion when the assumption is broken (for example, NN with highway connection/branching). <br>
 
 Other works use an ILP solver, which consume lots of time to find the optimal memory planning, and can only be used for program without control flow, posing problem for real world adoption. <br>
 
