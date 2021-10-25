@@ -2,22 +2,24 @@
 layout: default
 title: Dynamic Tensor Rematerialization
 ---
-<h2>Dynamic Tensor Rematerialization(DTR)</h2>
+<h1>Dynamic Tensor Rematerialization(DTR)</h1>
 
 <div style="color:#222;font-size:0.8rem">Marisa Kirisame, Steven Lyubomirsky, Altan Haan, Jennifer Brennan, Mike He, Jared Roesch, Tianqi Chen, Zachary Tatlock </div>
 
 <div> <a href="https://arxiv.org/abs/2006.09616">paper</a> <a href="resources/DTR.pptx">slides</a> <a href="https://www.youtube.com/watch?v=S9KJ37Sx2XY">video</a> </div>
-     
-     DTR:
-     
-     <ul>
-       <li>Is a very simple, Tensor Level Runtime Cache</li>
-       <li>Save GPU memory for DNN training by recomputing result when needed.</li>
-       <li>Save 3x memory for 20% extra compute time!</li>
-       <li>Due to the simplicity, can be easily implemented into different deep learning framework.</li>
-     </ul> 
-     
 
+<br>
+
+<h2>DTR:</h2>
+
+<ul>
+  <li>Is a very simple, Tensor Level Runtime Cache</li>
+  <li>Save GPU memory for DNN training by recomputing result when needed.</li>
+  <li>Save 3x memory for 20% extra compute time!</li>
+  <li>Due to the simplicity, can be easily implemented into different deep learning framework.</li>
+</ul> 
+     
+<h2>Technical Dive</h2>
 Gradient Checkpointing is a technique to save memory for Deep Neural Network training, or more generally, for reverse-mode automatic differentiation. <br>
 
 As memory planning is NP-complete, and as gradient checkpointing has to plan memory for arbitary program with control flow, previous work made different restriction which sacrifice performance or usability. <br>
@@ -30,5 +32,5 @@ Additionally, gradient checkpointing couple the concept of calculating derivativ
 
 DTR tackle the problems above by planning the memory greedily at runtime, with a Tensor-Level Cache, instead of as a compiler pass. <br>
 
-Adoption: <br>
+<h2>Adoption:</h2>
 <a href="https://github.com/MegEngine/MegEngine/wiki/Reduce-GPU-memory-usage-by-Dynamic-Tensor-Rematerialization">MegEngine</a> <br>
