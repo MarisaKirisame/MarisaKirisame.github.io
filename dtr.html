@@ -20,22 +20,20 @@ title: Dynamic Tensor Rematerialization
 </ul> 
      
 <h2>Technical Dive</h2>
-<ol start="6">
-  <li>Lorem</li>
-  <li>Ipsum</li>
-  <li>Dolor</li>
-  </ol>
-Gradient Checkpointing is a technique to save memory for Deep Neural Network training, or more generally, for reverse-mode automatic differentiation. <br>
-
-As memory planning is NP-complete, and as gradient checkpointing has to plan memory for arbitary program with control flow, previous work made different restriction which sacrifice performance or usability. <br>
-
-Some works models the program as a stack machine with no heap, and suffers performance degradtion when the assumption is broken (for example, NN with highway connection/branching). <br>
-
-Other works use an ILP solver, which consume lots of time to find the optimal memory planning, and can only be used for program without control flow, posing problem for real world adoption. <br>
-
-Additionally, gradient checkpointing couple the concept of calculating derivatives, with that of saving memory by recomputing, which add complexity and limit applications range. <br>
-
-DTR tackle the problems above by planning the memory greedily at runtime, with a Tensor-Level Cache, instead of as a compiler pass. <br>
+<ol start="0">
+  <li>Gradient Checkpointing is a technique to save memory for Deep Neural Network training.</li>
+  <li>Or more generally, for reverse-mode automatic differentiation.</li>
+  <li>However, memory planning is np-complete.</li>
+  <li>Checkpointing also has to deal with program with arbitary control flow.</li>
+  <li>To combat this, previous work made different restriction which sacrifice performance or usability.</li>
+  <li>Some works models the program as a stack machine with no heap...</li>
+  <li>And suffers performance degradtion when the assumption is broken (for example, NN with highway connection/branching).</li>
+  <li>Other works use an ILP solver, which consume lots of time to find the optimal memory planning.</li>
+  <li>And can only be used for program/framework without control flow, posing problem for real world adoption.</li>
+  <li>Additionally, gradient checkpointing couple the concept of calculating derivatives, with that of saving memory by recomputing</li>
+  <li>This add complexity and limit applications range.</li>
+  <li>DTR tackle the problems above by planning the memory greedily at runtime, with a Tensor-Level Cache, instead of as a compiler pass. </li>
+</ol>
 
 <h2>Adoption:</h2>
 <a href="https://github.com/MegEngine/MegEngine/wiki/Reduce-GPU-memory-usage-by-Dynamic-Tensor-Rematerialization">MegEngine</a> <br>
