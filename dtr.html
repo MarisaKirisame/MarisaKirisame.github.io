@@ -13,10 +13,12 @@ title: Dynamic Tensor Rematerialization
 <h2>DTR:</h2>
 
 <ul>
-  <li>Is a very simple Tensor Level Runtime Cache</li>
-  <li>Save GPU memory for DNN training by recomputing result when needed.</li>
+  <li>Save memory for NN by dynamically discarding and recomputing intermediate result at runtime.</li>
+  <li>By being smart about what to keep and discard, let you trian larger model under tight budget.</li>
   <li>Save 3x memory for 20% extra compute time!</li>
-  <li>Due to the simplicity, can be easily implemented into different deep learning framework.</li>
+  <li>Make no assumption about the model, and does not require a static graph.</li>
+  <li>So it can be easily implemented into different deep learning framework.</li>
+  <li>Still achieve amazing space-time tradeoff!</li>
 </ul> 
      
 <h2>Technical Dive</h2>
