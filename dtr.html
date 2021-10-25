@@ -13,7 +13,7 @@ title: Dynamic Tensor Rematerialization
 <h2>DTR:</h2>
 
 <ul>
-  <li>Is a very simple, Tensor Level Runtime Cache</li>
+  <li>Is a very simple Tensor Level Runtime Cache</li>
   <li>Save GPU memory for DNN training by recomputing result when needed.</li>
   <li>Save 3x memory for 20% extra compute time!</li>
   <li>Due to the simplicity, can be easily implemented into different deep learning framework.</li>
@@ -27,12 +27,15 @@ title: Dynamic Tensor Rematerialization
   <li>Checkpointing also has to deal with program with arbitary control flow.</li>
   <li>To combat this, previous work made different restriction which sacrifice performance or usability.</li>
   <li>Some works models the program as a stack machine with no heap...</li>
-  <li>And suffers performance degradtion when the assumption is broken (for example, NN with highway connection/branching).</li>
+  <li>And suffers performance degradtion when the assumption is broken!</li>
+  <li>(for example, NN with highway connection/branching).</li>
   <li>Other works use an ILP solver, which consume lots of time to find the optimal memory planning.</li>
   <li>And can only be used for program/framework without control flow, posing problem for real world adoption.</li>
-  <li>Additionally, gradient checkpointing couple the concept of calculating derivatives, with that of saving memory by recomputing</li>
+  <li>Additionally, gradient checkpointing couple derivative calculation, with memory saving by recomputing.</li>
   <li>This add complexity and limit applications range.</li>
-  <li>DTR tackle the problems above by planning the memory greedily at runtime, with a Tensor-Level Cache, instead of as a compiler pass. </li>
+  <li>DTR tackle the problems above by planning the memory greedily at runtime, instead of as a compiler pass.</li>
+  <li>This solves the control flow and stack machine issue, as we do not model the program in anyway!</li>
+  <li>However, with a novel cache eviction policy, we are still able to achieve great performance.</li>
 </ol>
 
 <h2>Adoption:</h2>
