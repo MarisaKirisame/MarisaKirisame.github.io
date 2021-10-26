@@ -16,7 +16,7 @@ title: Dynamic Tensor Rematerialization
   <li>Save memory for NN by dynamically discarding and recomputing intermediate result at runtime.</li>
   <li>By being smart about what to keep and discard, let you train larger model under tight budget.</li>
   <li>Save 3x memory for 20% extra compute time!</li>
-  <li>Make no assumption about the model, and does not require a static graph.</li>
+  <li>Make no assumptions about the model, and does not require a static graph.</li>
   <li>So it can be easily implemented into different deep learning framework.</li>
   <li>Still achieve amazing space-time tradeoff!</li>
 </ul> 
@@ -35,7 +35,7 @@ title: Dynamic Tensor Rematerialization
   <li>And can only be used for program/framework without control flow, posing problem for real world adoption.</li>
   <li>Additionally, gradient checkpointing couple derivative calculation, with memory saving by recomputing.</li>
   <li>This add complexity and limit applications range.</li>
-  <li>DTR tackle the problems above by planning the memory greedily at runtime, instead of as a compiler pass.</li>
+  <li>DTR tackles the problems above by planning the memory greedily at runtime, instead of as a compiler pass.</li>
   <li>This solves the control flow and stack machine issue, as we do not model the program in anyway!</li>
   <li>However, with a novel cache eviction policy, we are still able to achieve great performance.</li>
 </ol>
