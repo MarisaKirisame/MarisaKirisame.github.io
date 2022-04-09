@@ -29,7 +29,7 @@ title: Dynamic Tensor Rematerialization
   <li>Checkpointing also has to deal with program with arbitary control flow.</li>
   <li>To combat this, previous work made different restriction which sacrifice performance or usability.</li>
   <li>Some works models the program as a stack machine with no heap...</li>
-  <li>And suffers performance degradtion when the assumption is broken!</li>
+  <li>And suffers performance degradation when the assumption is broken!</li>
   <li>(For example, NN with highway connection/branching).</li>
   <li>Other works use an ILP solver, which consume lots of time to find the optimal memory planning.</li>
   <li>And can only be used for program/framework without control flow, posing problem for real world adoption.</li>
