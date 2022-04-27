@@ -36,6 +36,7 @@ title: Dynamic Tensor Rematerialization
   <li>Additionally, gradient checkpointing couple derivative calculation, with memory saving by recomputing.</li>
   <li>This add complexity and limit applications range.</li>
   <li>DTR tackles the problems above by planning the memory greedily at runtime, instead of as a compiler pass.</li>
+  <li>Essentially, DTR always pair each tensor with a thunk(think lazy evaluation), so all tensor can be recomputed after evicting.</li>
   <li>This solves the control flow and stack machine issue, as we do not model the program in anyway!</li>
   <li>However, with a novel cache eviction policy, we are still able to achieve great performance.</li>
 </ol>
