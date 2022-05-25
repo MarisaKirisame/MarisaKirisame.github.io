@@ -10,10 +10,10 @@ title: Improving garbage collector
     <li>Review the space time tradeoff - the bigger the heap size is the faster it runs.</li>
     <li>Although all heap size for a single heap is pareto optimal, for a system with multiple heaps it may not be.</li>
     <li>This reflect the age old insight that optimality of subcomponent does not imply optimality of the whole system.</li>
-    <li>We introduce rule that gurantee global optimality.</li>
+    <li>We introduce rule that gurantees global optimality.</li>
     <li>Under such rule, extra memory grow sublinearly (squareroot) w.r.t working memory, as opposed to linearly.</li>
     <li>Take memory away from big heap and give it to small heap, reflecting the law of marginal diminishing return.</li>
-    <li>Recieve good result in v8 (the javascript compiler of chrome) and racket.
+    <li>Gets good result in v8 (the javascript compiler of chrome) and racket.
 </ul>
 
 <div> <a href="https://arxiv.org/abs/2204.10455">[paper]</a> <a href="resources/Balancer.pptx">[slides]</a> </div>
