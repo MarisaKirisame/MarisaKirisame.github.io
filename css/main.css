@@ -8,6 +8,9 @@ body {
   color: black;
   font-weight: bold;
 }
+.highlight {
+  color: red;
+}
 .pub {
   margin: 1em;
 }
