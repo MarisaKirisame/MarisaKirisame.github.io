@@ -4,40 +4,32 @@ body {
     color: grey;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-
 .self {
   color: red;
 }
-
 nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
 }
-
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-
 h1, h2, h3 {
     color: black;
 }
-
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
 }
-
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
 }
-
 ul.posts li {
     list-style: none;
 }
-
 .container li::marker {
     font-family: monospace;
 }
