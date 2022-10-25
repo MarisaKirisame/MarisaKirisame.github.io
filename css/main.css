@@ -5,7 +5,8 @@ body {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 .self {
-  color: red;
+  color: black;
+  font-weight: bold;
 }
 .pub {
   margin: 1em;
