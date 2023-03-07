@@ -47,7 +47,7 @@ title: Dynamic Tensor Rematerialization
   	<td>93.2%</td>
   </tr>
 </table> <br>
-<h2>Inspiration:</h2>
+<h2>Inspired:</h2>
 <a href="https://arxiv.org/abs/2203.15980">DELTA</a> <br>
 <h2>Technical Dive</h2>
 <ol start="0">
@@ -67,4 +67,7 @@ title: Dynamic Tensor Rematerialization
   <li>Essentially, DTR always pair each tensor with a thunk(think lazy evaluation), so all tensors can be recomputed after evicting.</li>
   <li>This solves the control flow and stack machine issue, as we do not model the program in anyway!</li>
   <li>However, with a novel cache eviction policy, we are still able to achieve great performance.</li>
+  <li>Note: one suprising fact about DTR is that it 'accidentally' discovered the O(n) time O(n^0.5) space, and the O(n log n) time O(log n) space scheme.</li>
+  <li>These two are both well-known result.</li>
+  <li>Furthermore DTR switch smoothly between normal execution without recomputation, O(n^0.5) space scheme, and O(log n) space scheme</li>.
 </ol>
