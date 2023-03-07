@@ -14,9 +14,15 @@ title: Improving garbage collector
     <li>Under such rule, extra memory grow sublinearly (squareroot) w.r.t working memory, as opposed to linearly.</li>
     <li>Take memory away from big heap and give it to small heap, reflecting the law of marginal diminishing return.</li>
     <li>Gets good result in v8 (the javascript compiler of chrome) and racket.
-    <li>Currently being implemented by firefox (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1770763">bugzilla ticket</a>),
-        chromium (<a href="https://chromium-review.googlesource.com/c/v8/v8/+/3929100">pr</a>),
-        and mmtk (<a href="https://github.com/mmtk/mmtk-core/pull/724">pr</a>)</li>
+    <li>Currently being implemented by <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1770763">firefox</a>,
+        <a href="https://chromium-review.googlesource.com/c/v8/v8/+/3929100">chromium</a>,
+        and <a href="https://github.com/mmtk/mmtk-core/pull/724">mmtk</a></li>
+    <li>
+        Note that you can still use MemBalancer without having multiple runtime. 
+        A typical computer system is very rarely single-tenant.
+        Even with a single runtime, the application still keep software cache, alongside os filecache, swap, and whatnot.
+        Runtime taking more memory mean software caches of all form will suffer.
+    </li>
 </ul>
 
 <div> <a href="https://arxiv.org/abs/2204.10455">[paper]</a> <a href="resources/Balancer.pptx">[slides]</a> </div>
