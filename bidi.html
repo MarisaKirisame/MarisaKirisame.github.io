@@ -1,0 +1,19 @@
+---
+layout: default
+title: Incremental HTML Layout
+---
+<h1>Incremental Bidirectional Type Checking</h1>
+<div style="color:#222;font-size:1rem">Thomas J. Porter, Marisa Kirisame, Ivan Wei, Pavel Panchekha, Cyrus Omar</div>
+
+<ul>
+    <li>Built algorithm to make bidirectional type checking incremental.</li>
+    <li>Use case: structural editor.</li>
+    <li>Key problem: scope management.</li>
+    <li>Might introduce/delete bindings during AST editing, and thus introduce/delete shadowing.</li>
+    <li>Solution: Each node have an order maintenance interval, tree inclusion relationship get translated to interval inclusion relationship.</li>
+    <li>Data structure to manage intervals, so a heavy-light decomposition on AST is possible.</li>
+    <li>Formalize the whole type system via Marked and Annotated Lambda Calculus (MALC) and prove correctness in Agda.</li>
+    <li>Result: huge speedup against from scratch computation.</li>
+</ul>
+
+<div> <a href="https://arxiv.org/abs/2506.02182">[paper]</a> </div>
