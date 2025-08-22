@@ -1,0 +1,22 @@
+---
+layout: default
+title: Incremental HTML Layout
+---
+<h1>Spineless Traversal</h1>
+<div style="color:#222;font-size:1rem">Marisa Kirisame, Tiezhi Wang, Pavel Panchekha</div>
+
+<ul>
+    <li>New algorithm to speedup incremental web layout.</li>
+    <li>Web layout: one pass in web browser, calculate bounding boxes for each nodes.</li>
+    <li>Incremental: web page keep changing, want to recompute only dirtied nodes.</li>
+    <li>Problem with SOTA: need to access auxiliary nodes not dirtied, to recompute dirtied nodes. The former might be much larger then the latter.</li>
+    <li>Idea: use a queue to store all dirtied nodes, skipping the need of auxiliary nodes.</li>
+    <li>Problem: queue order need to respect computation dependencies.</li>
+    <li>Solution: priority queue of Order Maintenance objects.</li>
+    <li>Design: custom dsl to schedule dependencies statically.</li>
+    <li>Optimization: compressed queue, conditional move, custom allocator for compactness and pointer compression</li>
+    <li>Result: 1.8x speedup against SOTA</li>
+    <li>Also applicable: Other Incremental Attribute Grammar Evaluation Tasks, example: typechecking, compilation, analysis</li>
+</ul>
+
+<div> <a href="https://arxiv.org/abs/2411.10659">[paper]</a> <a href="resources/Spineless.pptx">[slides]</a> </div>
